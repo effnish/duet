@@ -9,6 +9,6 @@
 ; B1:       Turn off heaters while probing
 
 M400                                                                 ; Wait for all other moves to complete
-M558 P8 C"zprobe.in+zprobe.mod" I0 T18000 F1200 H5 A5 S0.01 B0 R0.2  ; Set Z probe type, the dive height + speeds
+M558 P8 C"zprobe.in" I0 T18000 F1200 H5 A5 S0.01 B0 R0.2             ; Set Z probe type, the dive height + speeds
 G31 T8 P500 X0 Y25 Z3.05                                             ; Inductive probe offset, not critical, only used for coarse homing
 G4 P200                                                              ; Pause 200ms

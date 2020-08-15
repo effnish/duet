@@ -22,10 +22,10 @@ M569 P1 S1                                     ; physical drive 1 goes forwards
 M569 P2 S1                                     ; physical drive 2 goes forwards
 M569 P3 S1                                     ; physical drive 3 goes forwards
 M584 X0 Y1 Z2:3 E4                             ; set drive mapping
-M671 X-72:252 Y112:112 S0.5                    ; leadscrews at left (connected to Z) and right
+M671 X-53:274 Y112:112 S0.5                    ; leadscrews at left (connected to Z) and right
 M350 X16 Y16 Z16 E16 I1                        ; configure microstepping with interpolation
 ; M92 X80.00 Y80.00 Z400.00 E461.00            ; set steps per mm bondtech XR
-M92 X80.00 Y80.00 Z400.00 E419.00              ; set steps per mm afterburner
+M92 X80.00 Y80.00 Z400.00 E420.00              ; set steps per mm afterburner
 M566 X740.00 Y720.00 Z25.00 E6000.00           ; set maximum instantaneous speed changes (mm/min)
 M203 X18000.00 Y18000.00 Z300.00 E12000.00     ; set maximum speeds (mm/min)
 M201 X2800.00 Y2800.00 Z250.00 E3000.00        ; set accelerations (mm/s^2)
@@ -49,7 +49,7 @@ M98 P"/macros/print_scripts/activate_z_probe.g";              ; Select the induc
 ;M558 P1 C"zprobe.in+zprobe.mod" H5 F100 T12000 A1 S0.01      ; set Z probe type to unmodulated and the dive height + speeds
 ;G31 P600 X0 Y23.7 Z3.55                                      ; set Z probe trigger value, offset and trigger height
 ;M557 X6:214 Y24:178 S68:61                                   ; define mesh grid
-M557 X6:214 Y24:180 S68:52                                    ; define 3x3 mesh grid
+M557 X6:214 Y26:180 S52:38                                    ; define 4x4 mesh grid
 
 ; Heaters
 M308 S0 P"bedtemp" Y"thermistor" T100000 B4092 C0 R4700      ; configure sensor 0 as thermistor on pin bedtemp
@@ -64,9 +64,11 @@ M307 H1 B0 S1.00                                             ; disable bang-bang
 
 ; Fans
 M950 F0 C"fan0" Q150                           ; create fan 0 on pin fan0 and set its frequency
-M106 P0 S0 H-1                                 ; set fan 0 value. Thermostatic control is turned off
+M106 P0 C"part" S0 H-1                         ; set fan 0 value. Thermostatic control is turned off
 M950 F1 C"fan1" Q250                           ; create fan 1 on pin fan1 and set its frequency
 M106 P1 S1.0 H1 T45                            ; set fan 1 value. Thermostatic control is turned on
+M950 F2 C"fan2"                                ; create fan 2 on pin fan2 and set its frequency
+M106 P2 C"exhaust" S0 H-1                      ; set fan 2 value. Thermostatic control is turned off
 
 ; Tools
 M563 P0 D0 H1 F0                               ; define tool 0

@@ -11,7 +11,7 @@ G90                                               ; absolute positioning
 M98 P"/macros/print_scripts/z_current_high.g"
 
 M98 P"/macros/print_scripts/xy_current_low.g"
-G1 H1 X300 F1800                                  ; move quickly to X axis endstop and stop there (first pass)
+G1 H1 X250 F1800                                  ; move quickly to X axis endstop and stop there (first pass)
 G91                                               ; relative positioning
 G1 X-5 F6000                                      ; go back a few mm
 G90                                               ; absolute positioning

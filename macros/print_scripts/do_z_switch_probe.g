@@ -4,6 +4,9 @@ M98 P"/macros/print_scripts/activate_z_switch.g"
 M98 P"/macros/print_scripts/set_travel_limits.g"
 
 G90
+M98 P"/macros/print_scripts/goto_front_middle.g"
+M291 P"Can you pick off the oozy bits?" S2
+
 M98 P"/macros/print_scripts/goto_z_switch.g"
 G30 Z-99999
 M98 P"/macros/print_scripts/set_bed_limits.g"

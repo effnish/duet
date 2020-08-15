@@ -21,7 +21,7 @@ M98 P"/macros/print_scripts/speed_probing.g"
 M98 P"/sys/bed_probe_points.g"
 
 ; Repeat right away for more precision
-M98 P"/sys/bed_probe_points.g"
+; M98 P"/sys/bed_probe_points.g"
 
 ; Repeat right away for more precision
 ; M98 P"/sys/bed_probe_points.g"
